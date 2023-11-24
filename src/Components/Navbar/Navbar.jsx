@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isLoggedIn, setisLoggedIn] = useState(true);
+
   return (
     <div className="nav">
-      
       <a href="/">
         <img
           className="icon"
@@ -15,10 +17,27 @@ const Navbar = () => {
 
       <ul>
         <li>Home</li>
-        <li>About</li>
+
+        <li>
+          <Link to="/about" style={{ textDecoration: "none" }}>
+            About
+          </Link>
+        </li>
+
         <li>Contact</li>
         <li>Cart</li>
       </ul>
+      <div className="btndiv">
+        {isLoggedIn ? (
+          <button className="logout " onClick={() => setisLoggedIn(false)}>
+            Logout
+          </button>
+        ) : (
+          <button className="login " onClick={() => setisLoggedIn(1)}>
+            Login
+          </button>
+        )}
+      </div>
     </div>
   );
 };
