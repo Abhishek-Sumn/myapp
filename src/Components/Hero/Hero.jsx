@@ -52,7 +52,7 @@ const Hero = () => {
   ) : (
     <>
       <div className="Hero">
-        <div className="search-container">
+        <div className="search-container" >
           <input
             type="text"
             className="search-input"
@@ -63,7 +63,7 @@ const Hero = () => {
             }}
           />
 
-          <button
+          <button 
              onClick={() => {
               // Filter the restraunt cards and update the UI
               // searchText

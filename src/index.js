@@ -4,36 +4,26 @@ import './index.css';
 import Hero from './Components/Hero/Hero';
 import reportWebVitals from './reportWebVitals';
 import About from './Components/About/About';
-import Navbar from './Components/Navbar/Navbar';
-import Footer from './Components/Footer/Footer';
 import Error from './Components/ErrorPage/Error'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom'
-import { Routes, Route, createRoutesFromElements } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Route, createRoutesFromElements } from "react-router-dom";
 import Layout from './Layout';
-
-/* const router = createBrowserRouter([
-  {
-    path:'/',
-    element:<Layout/>,
-    children:[
-      ,
-    ]
-  },
-  {
-    paht:'/About',
-    element: <About/>,
-  }
-]) */
-
-
+import Contact from './Components/Contact/Contact';
+import RestaurantMenu from "./Components/RestaurantMenu/RestaurantMenu"
+import Profile from "./Components/About/Profile"
 
 const router = createBrowserRouter(createRoutesFromElements(
 
-  <Route path='/' element={<Layout />}>
+  <Route path='/' element={<Layout />} errorElement={<Error />}>
 
-    <Route path='about' element={<About />} />
-    <Route path='' element={<Hero/>}/>
+    <Route path='/about' element={<About />} />
+    <Route path='/about/profile' element={<Profile />} />
+
+
+    <Route path='' element={<Hero />} />
+    <Route path='/contact' element={<Contact />} />
+    <Route path='/restaurant/:id' element={<RestaurantMenu />} />
+
   </Route>
 
 

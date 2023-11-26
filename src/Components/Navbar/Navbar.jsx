@@ -7,16 +7,20 @@ const Navbar = () => {
 
   return (
     <div className="nav">
-      <a href="/">
+      <Link to="/">
         <img
           className="icon"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQX3qNsMMyLxmIRDO96uEIPe5cW9TJsH4vI1Up188LETqqrUMuRQ8yd3bD0gSasrz_9U&usqp=CAU"
           alt=""
         />
-      </a>
+      </Link>
 
       <ul>
-        <li>Home</li>
+        <li>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            Home
+          </Link>
+        </li>
 
         <li>
           <Link to="/about" style={{ textDecoration: "none" }}>
@@ -24,7 +28,11 @@ const Navbar = () => {
           </Link>
         </li>
 
-        <li>Contact</li>
+        <li>
+          <Link to="/contact" style={{ textDecoration: "none" }}>
+            Contact
+          </Link>
+        </li>
         <li>Cart</li>
       </ul>
       <div className="btndiv">
