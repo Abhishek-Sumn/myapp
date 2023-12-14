@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import "./Hero.css";
 import Shimmer from "./Shimmer";
-
-function filterData(searchTxt, restaurantList) {
-  const filterData = restaurantList.filter((restaurant) =>
-    restaurant.data?.name?.toLowerCase()?.includes(searchTxt.toLowerCase())
-  );
-  return filterData;
-}
+import Bestoffer from "./Bestoffer";
 
 const Hero = () => {
   const [allResaturants,setallResaturants] = useState([]);
@@ -42,18 +35,19 @@ const Hero = () => {
 
     const resData = await checkJsonData(json);
 
-
+    
     setallResaturants(resData);
     setfilteredResataurants(resData);
   }
+ 
 
   return allResaturants.length === 0 ? (
     <Shimmer />
   ) : (
     <>
-      <div className="Hero">
-        <div className="search-container" >
-          <input
+      <div class="">
+        <div class="p-5 ml-[80%] bg-gray-100" >
+          <input class="p-1 rounded"
             type="text"
             className="search-input"
             placeholder="Search"
@@ -63,7 +57,7 @@ const Hero = () => {
             }}
           />
 
-          <button 
+          <button class="bg-blue-300 rounded p-1"
              onClick={() => {
               // Filter the restraunt cards and update the UI
               // searchText
@@ -76,13 +70,17 @@ const Hero = () => {
           >
             Search
           </button>
+          
         </div>
+      
       </div>
 
-      <div className="restaurant-list">
+      <div class="flex flex-wrap justify-center">
+            
         {filteredResataurants?.map((restaurant) => {
           return <RestaurantCard {...restaurant?.info} />;
         })}
+
       </div>
     </>
   );

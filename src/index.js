@@ -11,6 +11,7 @@ import Layout from './Layout';
 import Contact from './Components/Contact/Contact';
 import RestaurantMenu from "./Components/RestaurantMenu/RestaurantMenu"
 import Profile from "./Components/About/Profile"
+import Instamart from './Components/Instamart/Instamart';
 
 const router = createBrowserRouter(createRoutesFromElements(
 
@@ -22,6 +23,8 @@ const router = createBrowserRouter(createRoutesFromElements(
 
     <Route path='' element={<Hero />} />
     <Route path='/contact' element={<Contact />} />
+    <Route path='/instamart' element={<Instamart />} />
+
     <Route path='/restaurant/:id' element={<RestaurantMenu />} />
 
   </Route>
