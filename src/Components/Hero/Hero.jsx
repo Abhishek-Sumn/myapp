@@ -14,7 +14,7 @@ const Hero = () => {
 
   async function getRestaurantsList() {
     let data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
 
     let json = await data.json();
@@ -35,7 +35,7 @@ const Hero = () => {
 
     const resData = await checkJsonData(json);
 
-    
+     console.log(resData) 
     setallResaturants(resData);
     setfilteredResataurants(resData);
   }

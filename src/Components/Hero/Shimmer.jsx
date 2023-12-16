@@ -6,4 +6,4 @@ const Shimmer = () => {
   )
 }
 
-export default Shimmer
+export default Shimmer;
