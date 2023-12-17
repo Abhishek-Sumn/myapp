@@ -34,8 +34,7 @@ const Hero = () => {
     }
 
     const resData = await checkJsonData(json);
-
-     console.log(resData) 
+ 
     setallResaturants(resData);
     setfilteredResataurants(resData);
   }

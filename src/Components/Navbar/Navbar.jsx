@@ -1,10 +1,11 @@
 import React, { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
-
+import {useSelector} from "react-redux"
 const Navbar = () => {
   const [isLoggedIn, setisLoggedIn] = useState(true);
   const {user} = useContext(UserContext);
+  const cartItems = useSelector(store => store.cart.items)
 
   return (
     <div class="flex justify-between bg-pink-50 shadow-lg">
@@ -46,7 +47,9 @@ const Navbar = () => {
           </Link>
         </li>
 
-        <li class="px-2.5">Cart</li>
+    <Link to="/cart">
+        <li class="px-2.5">Cart {cartItems.length}</li>
+    </Link>
 
         <Link to="/instamart">
           <li>Instamart</li>

@@ -5,12 +5,20 @@ import useResturentMenu from "../../utils/useRestaurantMenu";
 import { useEffect } from "react";
 import Shimmer from "../Hero/Shimmer";
 import MenuError from "./MenuError";
-let RestaurantMenu = () => {
+import { addItem } from "../../utils/cartSlice";
+import { useDispatch } from "react-redux";
+
+const RestaurantMenu = () => {
   const { id } = useParams();
 
   const restaurant = useRestaurant(id);
 
   const resInfo = useResturentMenu(id);
+  const dispatch = useDispatch();
+  const addFoodItem = (item) => {
+    dispatch(addItem(item));
+  }
+
 
   if (resInfo === null) return <Shimmer />;
 
@@ -27,7 +35,6 @@ let RestaurantMenu = () => {
         alt="Res Img"
       />
       <h3>{restaurant.city}</h3>
-      
       <h3>{restaurant.avgRating}</h3>
       <h3>{restaurant.costForTwoMessage}</h3>
 
@@ -48,7 +55,6 @@ let RestaurantMenu = () => {
             return (
               <div key={ele.card.info.id} class="flex flex-wrap ">
                 <div className="m-5  w-[20%]" style={{ flex: "2" }}>
-                  {/* {ele.card.info.name} */}
                   <h2 className="text-bold ">{ele.card.info.name}</h2>
 
                   {"  ₹ "}
@@ -61,7 +67,7 @@ let RestaurantMenu = () => {
                 <div className="  m-5" style={{ position: "relative" }}>
                   <button
                     className="shadow-md"
-                    /* onClick={() => handleAddItem(ele.card.info)} */
+                    onClick={() => addFoodItem(ele.card.info)}
                   >
                     add
                   </button>
@@ -71,7 +77,6 @@ let RestaurantMenu = () => {
           })}
         </div>
       )}
-
     </div>
   );
 };
