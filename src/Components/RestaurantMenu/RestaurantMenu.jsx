@@ -53,10 +53,12 @@ const RestaurantMenu = () => {
               /* console.log("ele",ele) */
             }
             return (
-              <div key={ele.card.info.id} class="flex flex-wrap ">
+              <div key={ele.card.info.id} class="flex flex-wrap ml-[10%] mr-[10%]">
                 <div className="m-5  w-[20%]" style={{ flex: "2" }}>
-                  <h2 className="text-bold ">{ele.card.info.name}</h2>
 
+
+                  <h2 className="text-bold ">{ele.card.info.name}</h2>
+                  
                   {"  ₹ "}
                   {ele.card.info.price / 100 ||
                     ele.card.info.defaultPrice / 100}
@@ -65,11 +67,18 @@ const RestaurantMenu = () => {
                   </p>
                 </div>
                 <div className="  m-5" style={{ position: "relative" }}>
+
+                  <img 
+                  class="w-[118px] h-[96px]"
+                  src={IMG_CDN_URL+ele.card.info.imageId} alt="" />
                   <button
-                    className="shadow-md"
+                    className="border border-grey-200 w-[90px] h-[33px] 
+                    font-bold text-green-700 text-xs
+                    bg-white ml-3.5 text-center z-40 
+                    hover:shadow-md"
                     onClick={() => addFoodItem(ele.card.info)}
                   >
-                    add
+                    ADD
                   </button>
                 </div>
               </div>

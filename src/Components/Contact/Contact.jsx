@@ -1,7 +1,10 @@
+import Bestoffer from "../Hero/Bestoffer";
+import Shimmer from "../Hero/Shimmer";
+import BannerList from "../Hero/BannerList"
 const Contact = () => {
   return (
     <>
-      <h1>Contact</h1>
+      <BannerList/>
     </>
   );
 };
