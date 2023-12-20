@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: swiggyfont;
+    src: url(../public/BasisGrotesqueArabicPro-Regular.ttf);
+}
+
+.swiggy{
+    font-family: swiggyfont;
+}
+
+
+@font-face {
+    font-family: swiggyfontbold;
+    src: url(../public/BasisGrotesqueArabicPro-Bold.ttf);
+}
+
+.swiggybold{
+    font-family: swiggyfontbold;
+}
+
+.custfixed{
+    position: fixed;
+}

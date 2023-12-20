@@ -1,10 +1,10 @@
-import Bestoffer from "../Hero/Bestoffer";
+import BestSmall from "../Hero/BestSmall";
 import Shimmer from "../Hero/Shimmer";
-import BannerList from "../Hero/BannerList"
+
 const Contact = () => {
   return (
     <>
-      <BannerList/>
+      <BestSmall/>
     </>
   );
 };

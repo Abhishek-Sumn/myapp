@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BEST_OFFER_URL, IMG_CDN_URL } from "../content";
+import { BEST_OFFER_URL, IMG_OFFER_URL } from "../content";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import {
@@ -7,7 +7,7 @@ import {
   ArrowLongRightIcon,
 } from "@heroicons/react/24/outline";
 
-const Bestoffer = () => {
+const BestSmall = () => {
   const [offer, setoffer] = useState([]);
   var data = [];
 
@@ -22,11 +22,11 @@ const Bestoffer = () => {
     async function checkData(jsonData) {
       for (
         let i = 0;
-        i < jsonData.data.cards[0].card.card.imageGridCards.info.length;
+        i < jsonData?.data?.cards[1]?.card?.card?.imageGridCards?.info?.length;
         i++
       ) {
         data[i] =
-          jsonData.data.cards[0].card.card.imageGridCards.info[i].imageId;
+          jsonData?.data?.cards[1]?.card?.card?.imageGridCards?.info[i]?.imageId;
       }
       return data;
     }
@@ -39,27 +39,27 @@ const Bestoffer = () => {
 
     breakpoints: {
       "(max-width: 480px)": {
-        slides: { perView: 1, spacing: 3 },
+        slides: { perView: 4, spacing: 3 },
       },
       "(min-width: 480px)": {
-        slides: { perView: 2, spacing: 3 },
+        slides: { perView: 5, spacing: 3 },
       },
       "(min-width: 768px)": {
-        slides: { perView: 2.5, spacing: 3 },
+        slides: { perView: 7, spacing: 3 },
       },
       "(min-width: 1920px)": {
-        slides: { perView: 3.2, spacing: 3.2 },
+        slides: { perView: 8.5, spacing: 3.2 },
       },
     },
   });
 
   return (
-    <div class=" px-[12%] mt-[3%]">
+    <div class=" px-[12%] pt-[3%] ">
       <div class="flex justify-between">
-        <h1 class="font-extrabold text-xl leading-7  pb-[1%]">
-          Best offers for you
+        <h1 class="text-xl leading-7  swiggybold ">
+          What's on your mind?
         </h1>
-        <div>
+        <div >
           <button
             onClick={() => instanceRef.current?.prev()}
             className="bg-gray-100 p-2 rounded-full disabled:text-gray-300 mr-3 mb-2"
@@ -81,12 +81,8 @@ const Bestoffer = () => {
         <div ref={sliderRef} class=" keen-slider  ">
           {offer.map((i) => {
             return (
-              <div className="keen-slider__slide ">
-                <img
-                  class="rounded-[32px] w-[425px] h-[252]"
-                  src={IMG_CDN_URL + i}
-                  alt=""
-                />
+              <div className="keen-slider__slide  flex justify-center pt-4">
+                <img class="h-[620]" src={IMG_OFFER_URL + i} alt="" />
               </div>
             );
           })}
@@ -96,4 +92,4 @@ const Bestoffer = () => {
   );
 };
 
-export default Bestoffer;
+export default BestSmall;

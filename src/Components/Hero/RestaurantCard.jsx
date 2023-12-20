@@ -11,17 +11,18 @@ const RestaurantCard = ({
   id,
 }) => {
   return (
-    <div class="w-[20%] p-2 m-2 shadow-lg transition ease-in-out hover:scale-95 rounded-2xl cursor-pointer">
+    <div class="w-[20%] p-2 m-2  transition ease-in-out hover:scale-95 rounded-2xl cursor-pointer">
       <Link to={`/restaurant/${id}`}>
         <img
-          class="rounded-t-2xl"
+          class="rounded-2xl mb-2"
           src={IMG_CDN_URL + cloudinaryImageId}
           alt=""
         />
-        <h2 class="font-bold">{name}</h2>
+        <h2 class="font-bold ">{name.slice(0,32)}</h2>
         <h3>{cuisines?.slice(0, 2).join(", ")}</h3>
         <span class="flex gap-1">
-          <svg class="p-0.95 m-[2px]"
+          <svg
+            class="p-0.95 m-[2px]"
             width="20"
             height="20"
             viewBox="0 0 20 20"
@@ -57,8 +58,8 @@ const RestaurantCard = ({
           </svg>
 
           <h4>{avgRating}</h4>
+          <h4 class="ml-1">{costForTwo}</h4>
         </span>
-        <h4>{costForTwo}</h4>
       </Link>
     </div>
   );
