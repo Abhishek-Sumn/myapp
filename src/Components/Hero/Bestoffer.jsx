@@ -22,11 +22,11 @@ const Bestoffer = () => {
     async function checkData(jsonData) {
       for (
         let i = 0;
-        i < jsonData.data.cards[0].card.card.imageGridCards.info.length;
+        i < jsonData?.data?.cards[0]?.card?.card?.imageGridCards?.info?.length;
         i++
       ) {
         data[i] =
-          jsonData.data.cards[0].card.card.imageGridCards.info[i].imageId;
+          jsonData?.data.cards[0]?.card?.card?.imageGridCards?.info[i]?.imageId;
       }
       return data;
     }
