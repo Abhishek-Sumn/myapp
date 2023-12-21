@@ -5,8 +5,19 @@ const Footer = () => {
     <>
       <div class="flex justify-center bg-slate-100 mt-16">
         <div class="flex flex-col">
-          <span>Visit my Portfolio for</span>
-          <span>more Info </span>
+          <h1 class="mb-2 text-xl font-extrabold text-gray-900 dark:text-whitez md:text-xl lg:text-xl">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r to-green-800 from-sky-600">
+              A project made by
+              <a href="https://abhisheksuman.me/">
+                <span
+                  class="underline decoration-black ml-1"
+                  href="abhisheksuman.me"
+                >
+                  Abhishek Suman
+                </span>
+              </a>
+            </span>
+          </h1>
         </div>
       </div>
       <div class="bg-black text-white flex p-4 gap-[10%] pl-[22.5%] h-[450px] pt-14">

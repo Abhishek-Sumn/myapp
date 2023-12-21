@@ -46,13 +46,19 @@ const Hero = () => {
       <Bestoffer />
       <BestSmall />
 
-      <div class=" ml-[80%] ">
-      {/*   <div class=" relative mx-auto text-gray-600">
+      <div class="  ">
+        <div class=" relative mx-auto text-gray-600 ">
+       
+        <label
+          class="mx-auto mt-8 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
+          for="search-bar"
+        >
           <input
-            class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-            type="search"
-            name="search"
-            placeholder="Search"
+            id="search-bar"
+            placeholder="Search for your favourite restaurants"
+            name="q"
+            class="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white"
+            required=""
             value={SearchTxt}
             onChange={(e) => {
               setSearchTxt(e.target.value);
@@ -60,7 +66,7 @@ const Hero = () => {
           />
           <button
             type="submit"
-            class="absolute right-0 top-0 mt-5 mr-8"
+            class="w-full md:w-auto px-6 py-3 bg-black border-black text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all"
             onClick={() => {
               // Filter the restraunt cards and update the UI
               // searchText
@@ -71,23 +77,22 @@ const Hero = () => {
               setfilteredResataurants(filteredResataurants);
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-search"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-            </svg>
+            <div class="flex items-center transition-all opacity-1">
+              <span class="text-sm font-semibold whitespace-nowrap truncate mx-auto">
+                Search
+              </span>
+            </div>
           </button>
-        </div> */}
+        </label>
+        </div>
+
       </div>
 
       <h1 class="font-extrabold text-xl leading-7 pl-[4%]  ml-[7%] pt-[3%] ">
         Top restaurant chains
       </h1>
+
+   
       <div class="flex flex-wrap justify-center px-10">
         {filteredResataurants?.map((restaurant) => {
           return <RestaurantCard {...restaurant?.info} />;

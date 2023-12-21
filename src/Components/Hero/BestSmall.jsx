@@ -6,6 +6,7 @@ import {
   ArrowLongLeftIcon,
   ArrowLongRightIcon,
 } from "@heroicons/react/24/outline";
+import Bannerload from "./Bannerload";
 
 const BestSmall = () => {
   const [offer, setoffer] = useState([]);
@@ -59,6 +60,8 @@ const BestSmall = () => {
         <h1 class="text-xl leading-7  swiggybold ">
           What's on your mind?
         </h1>
+
+      
         <div >
           <button
             onClick={() => instanceRef.current?.prev()}
@@ -76,7 +79,7 @@ const BestSmall = () => {
       </div>
 
       {offer.length === 0 ? (
-        <h1>Loaidn</h1>
+        <Bannerload/>
       ) : (
         <div ref={sliderRef} class=" keen-slider  ">
           {offer.map((i) => {

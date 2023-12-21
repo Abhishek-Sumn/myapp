@@ -6,7 +6,7 @@ import {
   ArrowLongLeftIcon,
   ArrowLongRightIcon,
 } from "@heroicons/react/24/outline";
-
+import Bannerload from "./Bannerload";
 const Bestoffer = () => {
   const [offer, setoffer] = useState([]);
   var data = [];
@@ -55,10 +55,16 @@ const Bestoffer = () => {
 
   return (
     <div class=" px-[12%] mt-[3%]">
+
+
+
+
       <div class="flex justify-between">
         <h1 class="font-extrabold text-xl leading-7  pb-[1%]">
           Best offers for you
         </h1>
+
+        
         <div>
           <button
             onClick={() => instanceRef.current?.prev()}
@@ -76,7 +82,7 @@ const Bestoffer = () => {
       </div>
 
       {offer.length === 0 ? (
-        <h1>Loaidn</h1>
+        <Bannerload/>
       ) : (
         <div ref={sliderRef} class=" keen-slider  ">
           {offer.map((i) => {

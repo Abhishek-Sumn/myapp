@@ -8,40 +8,16 @@ const Navbar = () => {
 
   const [searchText, setSearchText] = useState("");
   return (
-    <div class="z-[1000]  flex justify-between  shadow  bg-white w-[100%]">
+    <div class="z-[1000] px-[10%] sticky top-0 flex justify-between  shadow  bg-white w-[100%]">
       <Link to="/">
         <img
-          class="h-14 mx-12 mt-4 rounded-full ml-6 pb-1"
+          class="h-14  mt-5 rounded-full pb-2"
           src="https://cdn.iconscout.com/icon/free/png-256/free-swiggy-1613371-1369418.png"
           alt=""
         />
       </Link>
 
       <ul class="flex gap-5 ">
-        
-        <li class="flex justify-center items-center">
-          <input
-            class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-            type="search"
-            name="search"
-            placeholder="Search"
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button type="submit" class="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-search"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-            </svg>
-          </button>
-        </li>
 
         <li className="sm:mr-7 md:flex group hover:text-orange-500 mr-14">
           <Link
