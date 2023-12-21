@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div class="flex justify-between mx-5 mt-4">
+    <div class="flex mx-[10%] gap-4 mt-4">
       <div class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
         <div class="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
           <img
@@ -19,8 +19,7 @@ const Contact = () => {
             <ul>
               <li>
                 {" "}
-                Streamlined inventory tracking and order fulfillment processes
-                by developing a customized Inventory Management System.
+                Streamlined inventory tracking
               </li>
               <li>Capable of CRUD operations on Products.</li>
               <li>Easy to use.</li>
@@ -56,7 +55,7 @@ const Contact = () => {
           <p class="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
             <ul>
               <li> Fetching LIVE data from OMDB API</li>
-              <li>Get Updated information about latest Movies And Series</li>
+              <li>Get Updated infos about latest Movies And Series</li>
               <li>Dark Theme.</li>
             </ul>
           </p>
