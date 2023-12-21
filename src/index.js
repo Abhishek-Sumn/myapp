@@ -13,6 +13,7 @@ import RestaurantMenu from "./Components/RestaurantMenu/RestaurantMenu"
 import Profile from "./Components/About/Profile"
 import Instamart from './Components/Instamart/Instamart';
 import Cart from './Components/Navbar/Cart';
+import Bestoffer from './Components/Hero/Bestoffer';
 
 const router = createBrowserRouter(createRoutesFromElements(
 
@@ -20,6 +21,8 @@ const router = createBrowserRouter(createRoutesFromElements(
 
     <Route path='/about' element={<About />} />
     <Route path='/about/profile' element={<Profile />} />
+    <Route path='/offer' element={<Bestoffer/>} />
+    
 
 
     <Route path='' element={<Hero />} />
