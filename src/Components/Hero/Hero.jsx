@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import Bestoffer from "./Bestoffer";
 import BestSmall from "../Hero/BestSmall";
+import { BEST_OFFER_URL } from "../content";
 const Hero = () => {
   const [allResaturants, setallResaturants] = useState([]);
   const [SearchTxt, setSearchTxt] = useState("burger");
@@ -14,11 +15,11 @@ const Hero = () => {
 
   async function getRestaurantsList() {
     let data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://swiggyapi.onrender.com/restaurant"
     );
 
+    console.log(data)
     let json = await data.json();
-
     async function checkJsonData(jsonData) {
       for (let i = 0; i < jsonData?.data?.cards.length; i++) {
         // initialize checkData for Swiggy Restaurant data
