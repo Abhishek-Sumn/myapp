@@ -18,7 +18,7 @@ const Hero = () => {
       "https://swiggyapi.onrender.com/restaurant"
     );
 
-    console.log(data)
+    
     let json = await data.json();
     async function checkJsonData(jsonData) {
       for (let i = 0; i < jsonData?.data?.cards.length; i++) {
