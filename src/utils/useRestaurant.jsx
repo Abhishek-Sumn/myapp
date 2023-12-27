@@ -6,18 +6,17 @@ const useRestaurant = (id) => {
   //fetch data
   useEffect(() => {
     getRestaurantInfo();
-  });
+  },[]);
 
   async function getRestaurantInfo() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6089845&lng=77.29420809999999&restaurantId=" +
-        id
+      "http://localhost:8080/restaurant/info/"+id
     );
 
     const json = await data.json();
-    setRestaurant(json.data.cards[0].card.card.info);
+    setRestaurant(json);
+    console.log(json)
   }
-
   return restaurant;
 };
 

@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL, IMG_MENU_URL } from "../content";
 import useRestaurant from "../../utils/useRestaurant";
 import useResturentMenu from "../../utils/useRestaurantMenu";
-import { useEffect } from "react";
 import Shimmer from "../Hero/Shimmer";
 import MenuError from "./MenuError";
 import { addItem } from "../../utils/cartSlice";
@@ -13,17 +12,17 @@ const RestaurantMenu = () => {
 
   const restaurant = useRestaurant(id);
 
-  const resInfo = useResturentMenu(id);
   const dispatch = useDispatch();
   const addFoodItem = (item) => {
     dispatch(addItem(item));
   };
 
+  const resInfo = useResturentMenu(id);
+
   if (resInfo === null) return <Shimmer />;
 
-  let { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
-
+  let  itemCards  = resInfo;
+  
   return (
     <div class="">
       <div class="flex justify-between px-[11%] pt-[2%] pb-2">
@@ -37,7 +36,7 @@ const RestaurantMenu = () => {
 
           <h3>{restaurant.city}</h3>
           <span class="flex">
-            <svg 
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="green"
@@ -51,16 +50,13 @@ const RestaurantMenu = () => {
               ></path>
             </svg>
 
-            <h1 class="text-green">
-
-            {restaurant.avgRating}
-            </h1>
+            <h1 class="text-green">{restaurant.avgRating}</h1>
           </span>
           <h3>{restaurant.costForTwoMessage}</h3>
         </div>
       </div>
 
-      {itemCards === undefined ? (
+      {itemCards.length === 0 ? (
         <MenuError />
       ) : (
         <div>
@@ -108,6 +104,7 @@ const RestaurantMenu = () => {
         </div>
       )}
     </div>
+
   );
 };
 
