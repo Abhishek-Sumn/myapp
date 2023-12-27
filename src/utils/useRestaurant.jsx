@@ -10,7 +10,7 @@ const useRestaurant = (id) => {
 
   async function getRestaurantInfo() {
     const data = await fetch(
-      "http://localhost:8080/restaurant/info/"+id
+      "https://swiggyapi.onrender.com/restaurant/info/"+id
     );
 
     const json = await data.json();
