@@ -15,7 +15,7 @@ const useRestaurant = (id) => {
 
     const json = await data.json();
     setRestaurant(json);
-    console.log(json)
+   
   }
   return restaurant;
 };
