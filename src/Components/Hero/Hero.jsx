@@ -6,7 +6,7 @@ import BestSmall from "../Hero/BestSmall";
 import { BEST_OFFER_URL } from "../content";
 const Hero = () => {
   const [allResaturants, setallResaturants] = useState([]);
-  const [SearchTxt, setSearchTxt] = useState("burger");
+  const [SearchTxt, setSearchTxt] = useState("");
   const [filteredResataurants, setfilteredResataurants] = useState([]);
 
   useEffect(() => {

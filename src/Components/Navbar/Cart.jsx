@@ -41,11 +41,12 @@ const Cart = () => {
           onClick={() => {
             emptyCart();
           }}
-          class="p-2 border bg-red-400 rounded-lg"
+          class="p-2 border bg-red-400 rounded-lg ml-[85%]"
         >
           Clear Cart
         </button>
       )}
+
     </>
   );
 };
