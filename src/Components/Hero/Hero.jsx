@@ -15,7 +15,7 @@ const Hero = () => {
 
   async function getRestaurantsList() {
     let data = await fetch(
-      "https://swiggyapi.onrender.com/restaurant"
+      "https://swiggyapi.azurewebsites.net/restaurant"
     );
 
     
