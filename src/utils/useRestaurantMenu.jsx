@@ -11,11 +11,12 @@ const useResturentMenu=(resId)=>{
 
   let fetchData= async()=>{
 
-    let data=await fetch(MENU_API+resId)
+    let data=await fetch("https://swiggyapi.azurewebsites.net/restaurant/"+resId)
     let res=await data.json()
-    setResInfo(res.data)
+    setResInfo(res)
+    
   }
-  return resInfo
-
+ 
+  return resInfo;
 }
 export default useResturentMenu
