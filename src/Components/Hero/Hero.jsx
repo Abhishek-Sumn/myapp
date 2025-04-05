@@ -15,7 +15,7 @@ const Hero = () => {
 
   async function getRestaurantsList() {
     let data = await fetch(
-      "https://swiggyapi.azurewebsites.net/restaurant"
+      "http://51.79.250.6:9999/restaurant/"
     );
 
     
