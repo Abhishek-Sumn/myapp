@@ -10,7 +10,7 @@ const useRestaurant = (id) => {
 
   async function getRestaurantInfo() {
     const data = await fetch(
-      "https://swiggyapi.azurewebsites.net/restaurant/info/"+id
+      "http://51.79.250.6:9999/restaurant/"+id
     );
 
     const json = await data.json();
