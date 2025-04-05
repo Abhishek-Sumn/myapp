@@ -11,7 +11,7 @@ const useResturentMenu=(resId)=>{
 
   let fetchData= async()=>{
 
-    let data=await fetch("https://swiggyapi.azurewebsites.net/restaurant/"+resId)
+    let data=await fetch("http://51.79.250.6:9999/restaurant/"+resId)
     let res=await data.json()
     setResInfo(res)
     
