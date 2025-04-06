@@ -15,7 +15,7 @@ const Hero = () => {
 
   async function getRestaurantsList() {
     let data = await fetch(
-      "https://51.79.250.6/restaurant"
+      "https://api.abhisheksuman.me/restaurant"
     );
 
     
